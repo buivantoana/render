@@ -1,10 +1,11 @@
 const express = require("express");
 const connectDB = require("./connectMongo.js");
 const router = require("./src/routes/index.js");
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
-
+app.use(cors());
 connectDB();
 
 app.use("/api", router);
